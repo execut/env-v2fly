@@ -12,15 +12,17 @@
 1. Run proxy on your Linux:
    1. `docker compose -f docker-compose-client.yml up -d`
    1. or via apt:
-      1. `sudo aptitude install v2ray`
-      1. `sudo mv /etc/v2ray/config.json /etc/v2ray/config.json-old`
-      1. `cp v2ray-client.json /etc/v2ray/config.json` 
-      1. `service v2ray restart`
+```bash
+sudo aptitude install v2ray
+sudo mv /etc/v2ray/config.json /etc/v2ray/config.json-old
+cp v2ray-client.json /etc/v2ray/config.json
+service v2ray restart
+```
 
 ## Usage 
 1. Test proxy via Chrome `google-chrome --proxy-server="127.0.0.1:10800"`
 2. Save proxy setting in local environment permanently:
-```ssh
+```bash
 echo '
 export http_proxy="127.0.0.1:10800"
 export https_proxy="127.0.0.1:10800"
