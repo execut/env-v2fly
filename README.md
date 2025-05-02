@@ -7,6 +7,7 @@
 1. Replace email1\pass1 for client config `v2ray-client.json`
 1. Replace my.domain.com to your vpn domain in `docker-compose.yml` and `.env`
 1. Run v2ray on server: `docker compose up -d`
+1. For direct route detection of ru domains, [download geosite.dat](https://github.com/v2fly/domain-list-community?tab=readme-ov-file) file to `/etc/v2ray/geosite.dat` 
 1. Run proxy on your Linux:
    1. `docker compose -f docker-compose-client.yml up -d`
    1. or via apt:

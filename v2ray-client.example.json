@@ -2,6 +2,18 @@
   "log": {
     "loglevel": "warning"
   },
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "geosite:category-ru"
+        ],
+        "outboundTag": "direct"
+      }
+    ]
+  },
   "inbounds": [
     {
       "port": 10800,
@@ -26,7 +38,12 @@
       "streamSettings": {
         "network": "tcp",
         "security": "tls"
-      }
+      },
+      "tag": "proxy"
+    },
+    {
+      "protocol": "freedom",
+      "tag": "direct"
     }
   ]
 }
