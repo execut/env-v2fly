@@ -1,14 +1,12 @@
 # Configuration for Trojan VPN environment
 
 ## Setup
-1. Replace email1\pass1, email2\pass2, email3\pass3 to your users in file v2ray.json
+1. Run [Traefik env](https://github.com/execut/env-traefik)
+1. `cp v2ray.example.json v2ray.json && cp v2ray-client.json v2ray-client.example.json`
+2. Replace email1\pass1, email2\pass2, email3\pass3 to your users in file v2ray.json
 1. Replace email1\pass1 for client config v2ray-client.json
-1. `cp .env.example .env`
 1. Replace my.domain.com to your vpn domain in docker-compose.yml and v2ray-client.json
-1. Setup in .env file account for traefik. `DASHBOARD_PASSWORD` generate via command `htpasswd -nb admin newpassword`
-1. Clone this repo and run Traefik and v2ray on your server:
-   1. `docker compose -f docker-compose-traefik.yml up -d`
-   1. `docker compose up -d`
+1. Run v2ray on server: `docker compose up -d`
 1. Run proxy on your Linux:
    1. `docker compose -f docker-compose-client.yml up -d`
    1. or via apt:
